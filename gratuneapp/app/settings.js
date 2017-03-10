@@ -1,3 +1,5 @@
+// app/settings.js
+
 const React = require('react');
 const SideMenu = require('react-native-side-menu');
 const Menu = require('./menu');
@@ -10,26 +12,6 @@ const {
   TouchableOpacity,
 } = require('react-native');
 const { Component } = React;
-
-import { Router, Scene } from 'react-native-router-flux';
-
-const Basic = require('./basic');
-
-const App = () => {
-  return (
-    <Router>
-      <Scene key="root">
-        <Scene
-          key="basic"
-          component={Basic}
-          initial
-          hideNavBar>
-        </Scene>
-      </Scene>
-    </Router>
-  );
-}
-
 
 const styles = StyleSheet.create({
   button: {
@@ -60,4 +42,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+const settings = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcome}>
+        Settings
+      </Text>
+    </View>
+  );
+}
+
+
+export default settings;
