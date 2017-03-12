@@ -15,7 +15,7 @@ const App = () => {
       <Scene key="root">
         <Scene key="login"
           component={login}
-          title="login"
+          title="Gratune"
           initial
         />
       </Scene>
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#30323D',
   },
   welcome: {
     fontSize: 20,
