@@ -8,6 +8,7 @@ import {
 import { Router, Scene } from 'react-native-router-flux';
 
 import login from './login';
+import userdash from './userdash';
 
 const App = () => {
   return (
@@ -19,6 +20,13 @@ const App = () => {
           initial
         />
       </Scene>
+      <Scene key="root">
+        <Scene key="userdash"
+          component={userdash}
+          title="All Events"
+          initial
+          />
+        </Scene>
     </Router>
   );
 }
