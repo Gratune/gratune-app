@@ -13,17 +13,8 @@ import {
 const baricon = "https://cdn3.iconfinder.com/data/icons/buildings-places/512/Concert-256.png"
 const usericon = "http://icons.iconarchive.com/icons/icons8/android/512/Users-User-icon.png"
 
-const userContent =
+// const venueContent = placeholder="Password"
 
-        <TextInput
-          // style={styles.login_input}
-          placeholder="E-mail" />
-        // <TextInput
-        //   style={styles.login_input}
-        //   placeholder="Password" />
-const venueContent =
-<TextInput
- placeholder = "Venue" />
 
 
 
@@ -36,9 +27,31 @@ class signup extends Component{
         selectedTab: 'userTab',
       };
 
-  _renderContent = (pageContent) => {
+  _renderContent = (inputName:string, pageContent?) => {
   return (
-    <View style={[styles.tabContent]}>{pageContent}</View>
+
+    <View style={[styles.tabContent]}>
+    <TextInput
+    style={styles.login_input}
+    placeholder={inputName}
+    />
+    <TextInput
+    style={styles.login_input}
+    placeholder="E-mail"
+    />
+    <TextInput
+    style={styles.login_input}
+    placeholder="Password"
+    />
+    <TextInput
+    style={styles.login_input}
+    placeholder="Confirm Password"
+    />
+    <TextInput
+    style={styles.login_input}
+    placeholder="Password"
+    />
+    </View>
   );
 };
 
@@ -50,14 +63,13 @@ render() {
       barTintColor="#30323D">
       <TabBarIOS.Item
         title="User Sign-Up"
-        // icon={{url: usericon, scale: 3}}
         selected={this.state.selectedTab === 'userTab'}
         onPress={() => {
           this.setState({
             selectedTab: 'userTab',
           });
         }}>
-        {this._renderContent(userContent)}
+        {this._renderContent("Name")}
       </TabBarIOS.Item>
       <TabBarIOS.Item
         title="Venue Sign-Up"
@@ -67,7 +79,7 @@ render() {
             selectedTab: 'venueTab',
           });
         }}>
-        {this._renderContent(venueContent)}
+        {this._renderContent("Venue Name")}
       </TabBarIOS.Item>
     </TabBarIOS>
   );
@@ -88,6 +100,14 @@ tabText: {
   margin:40,
   // textAlign: 'center',
   color: '#Cdd1c4',
+},
+login_input:{
+  fontSize: 20,
+  // color: '#Cdd1c4',
+  height: 40,
+  // padding: 20,
+  justifyContent: 'center',
+  backgroundColor: '#Cdd1c4',
 },
 });
 
