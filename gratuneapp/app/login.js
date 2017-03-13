@@ -7,15 +7,19 @@ import {
     View,
     Image,
     Button,
-    TextInput
+    TextInput,
+    Alert,
+    Router
 } from 'react-native';
+
+import { Actions } from 'react-native-router-flux';
+
 
 const onButtonPress = () => {
   Alert.alert('Button has been pressed!');
 };
 
-
-    const login = () => {
+const login = () => {
         return ( <
             View style = {
                 styles.container
@@ -46,7 +50,7 @@ const onButtonPress = () => {
                 color='#Cdd1c4'
               />
               <Button
-                  onPress={onButtonPress}
+                  onPress={Actions.signup}
                   title="Sign-Up"
                   color='#Cdd1c4'
                 />

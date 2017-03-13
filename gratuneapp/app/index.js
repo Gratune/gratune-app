@@ -8,6 +8,7 @@ import {
 import { Router, Scene } from 'react-native-router-flux';
 
 import login from './login';
+import signup from './signup';
 
 const App = () => {
   return (
@@ -16,9 +17,11 @@ const App = () => {
         <Scene key="login"
           component={login}
           title="Gratune"
-          initial
+          initial ={true}
         />
-      </Scene>
+        <Scene key="signup" component={signup} title="Sign Up"/>
+        </Scene>
+
     </Router>
   );
 }
