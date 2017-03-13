@@ -7,6 +7,7 @@ import {
 
 import { Router, Scene } from 'react-native-router-flux';
 
+
 import login from './login';
 import signup from './signup';
 
@@ -19,7 +20,7 @@ const App = () => {
           title="Gratune"
           initial ={true}
         />
-        <Scene key="signup" component={signup} title="Sign Up"/>
+        <Scene key="signup" component={signup} title="Sign Up" direction = "vertical"/>
         </Scene>
 
     </Router>
