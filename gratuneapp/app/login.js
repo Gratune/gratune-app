@@ -43,6 +43,7 @@ const login = () => {
             <TextInput
               style={styles.login_input}
               placeholder="Password"
+              secureTextEntry
             />
             <Button
                 onPress={onButtonPress}
@@ -50,6 +51,7 @@ const login = () => {
                 color='#Cdd1c4'
               />
               <Button
+                  // style = {styles.signup}
                   onPress={Actions.signup}
                   title="Sign-Up"
                   color='#Cdd1c4'
@@ -83,14 +85,12 @@ const login = () => {
           // padding: 20,
           justifyContent: 'center',
           backgroundColor: '#Cdd1c4',
-
-
         },
-        signup:{
-          color: '#Cdd1c4',
-          paddingBottom:100,
-
-        }
+        // signup:{
+        //   color: '#Cdd1c4',
+        //   paddingBottom:500,
+        //
+        // }
 
     });
 

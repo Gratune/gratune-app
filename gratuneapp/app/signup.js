@@ -45,10 +45,12 @@ class signup extends Component{
     <TextInput
     style={styles.login_input}
     placeholder="Password"
+    secureTextEntry
     />
     <TextInput
     style={styles.login_input}
     placeholder="Confirm Password"
+    secureTextEntry
     />
     <TextInput
     style={styles.login_input}
@@ -59,6 +61,11 @@ class signup extends Component{
         title="Sign-Up"
         color='#Cdd1c4'
       />
+      <Button
+          onPress={Actions.login}
+          title="Sign-In Page"
+          color='#Cdd1c4'
+        />
     </View>
   );
 };
