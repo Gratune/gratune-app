@@ -8,32 +8,35 @@ import {
     Button,
     TextInput,
     TabBarIOS,
+    Alert,
 } from 'react-native';
 
 const baricon = "https://cdn3.iconfinder.com/data/icons/buildings-places/512/Concert-256.png"
 const usericon = "http://icons.iconarchive.com/icons/icons8/android/512/Users-User-icon.png"
 
+import { Actions } from 'react-native-router-flux';
+import venueSetup from './venueSetup';
+const onButtonPress = () => {
+  Alert.alert('Button has been pressed!');
+};
+
+
 // const venueContent = placeholder="Password"
-
-
-
 
 class signup extends Component{
   static title = '<TabBarIOS>';
-  static description = 'Tab-based navigation.';
-  static displayName = 'TabBarExample';
 
         state = {
         selectedTab: 'userTab',
       };
 
-  _renderContent = (inputName:string, pageContent?) => {
+  _renderContent = () => {
   return (
 
     <View style={[styles.tabContent]}>
     <TextInput
     style={styles.login_input}
-    placeholder={inputName}
+    placeholder="Name"
     />
     <TextInput
     style={styles.login_input}
@@ -51,6 +54,11 @@ class signup extends Component{
     style={styles.login_input}
     placeholder="Password"
     />
+    <Button
+        onPress={onButtonPress}
+        title="Sign-Up"
+        color='#Cdd1c4'
+      />
     </View>
   );
 };
@@ -69,17 +77,14 @@ render() {
             selectedTab: 'userTab',
           });
         }}>
-        {this._renderContent("Name")}
+        {this._renderContent()}
       </TabBarIOS.Item>
       <TabBarIOS.Item
         title="Venue Sign-Up"
         selected={this.state.selectedTab === 'venueTab'}
-        onPress={() => {
-          this.setState({
-            selectedTab: 'venueTab',
-          });
-        }}>
-        {this._renderContent("Venue Name")}
+        onPress={Actions.venueSetup}
+        >
+        {this._renderContent()}
       </TabBarIOS.Item>
     </TabBarIOS>
   );
@@ -111,47 +116,5 @@ login_input:{
 },
 });
 
-
-
-
-
-//   render(){
-//     return (
-//       <View style = {styles.container}>
-//         <TextInput
-//           style={styles.login_input}
-//           placeholder="E-mail"
-//         />
-//         <TextInput
-//           style={styles.login_input}
-//           placeholder="Password"
-//         />
-//
-//         </View>
-//
-//     );
-//   }
-// }
-//
-//
-//
-//
-//     const styles = StyleSheet.create({
-//         container: {
-//             flex: 1,
-//             justifyContent: 'center',
-//             alignItems: 'center',
-//             backgroundColor: '#4d5061',
-//         },
-//         login_input: {
-//             fontSize: 40,
-//             height: 40,
-//             margin:40,
-//             // textAlign: 'center',
-//             color: '#Cdd1c4',
-//         },
-//
-//
-//     });
 
     module.exports = signup;
