@@ -24,14 +24,14 @@ export default class MyDrawer extends Component {
                 open={state.open}
                 onOpen={()=>Actions.refresh({key:state.key, open: true})}
                 onClose={()=>Actions.refresh({key:state.key, open: false})}
-                type="displace"
+                type="overlay"
                 content={<ControlPanel />}
                 tapToClose={true}
                 openDrawerOffset={0.2}
                 panCloseMask={0.2}
                 negotiatePan={true}
                 tweenHandler={(ratio) => ({
-                 main: { opacity:Math.max(0.54,1-ratio) }
+                main: { opacity:Math.max(0.54,1-ratio) }
             })}>
                 <DefaultRenderer navigationState={children[0]} onNavigate={this.props.onNavigate} />
             </Drawer>

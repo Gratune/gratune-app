@@ -13,7 +13,6 @@ import {
 
 import { Actions } from 'react-native-router-flux';
 
-
 export default class ControlPanel extends Component {
 
   render() {
@@ -26,6 +25,11 @@ export default class ControlPanel extends Component {
       setTimeout(() => Actions.Settings(), 100);
     }
 
+    var goToAddBand = () => {
+      Actions.refresh({key: 'drawer', open: value => !value })
+      setTimeout(() => Actions.addBand(), 100);
+    }
+
     return (
       <ScrollView style={styles.container}>
         <Text style={styles.controlText}>Control Panel</Text>
@@ -35,6 +39,10 @@ export default class ControlPanel extends Component {
 
         <TouchableOpacity style={styles.button} onPress={goToSettings}>
           <Text>Settings</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={goToAddBand}>
+          <Text>Add Bands</Text>
         </TouchableOpacity>
 
       </ScrollView>

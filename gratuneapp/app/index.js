@@ -23,9 +23,9 @@ import {
 
 import Drawer from 'react-native-drawer'
 
-
 import Home from './home';
-import Settings from './settings'
+import Settings from './settings';
+import addBand from './addBand';
 
 import MyDrawer from './MyDrawer'
 
@@ -38,6 +38,7 @@ render() {
         <Scene key="main" tabs={false} >
           <Scene key="Home" component={Home}  />
           <Scene key = "Settings" component={Settings} />
+          <Scene key = "addBand" component={addBand} />
         </Scene>
       </Scene>
     </Router>);
