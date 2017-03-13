@@ -1,63 +1,53 @@
-const React = require('react');
-const SideMenu = require('react-native-side-menu');
-const Menu = require('./menu');
+'use strict'
 
-const {
+import React, {
+  Component,
+} from 'react';
+import {
+  AppRegistry,
+  PropTypes,
   StyleSheet,
   Text,
-  View,
-  Image,
-  TouchableOpacity,
-} = require('react-native');
-const { Component } = React;
+  View
+} from 'react-native';
 
-import { Router, Scene } from 'react-native-router-flux';
+import {
+  Scene,
+  Reducer,
+  Router,
+  Switch,
+  Modal,
+  Actions,
+  ActionConst,
+} from 'react-native-router-flux';
 
-const Basic = require('./basic');
+import Drawer from 'react-native-drawer'
 
-const App = () => {
+
+import Home from './home';
+import Settings from './settings'
+
+import MyDrawer from './MyDrawer'
+
+export default class App extends Component {
+
+render() {
   return (
     <Router>
-      <Scene key="root">
-        <Scene
-          key="basic"
-          component={Basic}
-          initial
-          hideNavBar>
+      <Scene key="drawer" component={MyDrawer} open={false}>
+        <Scene key="main" tabs={false} >
+          <Scene key="Home" component={Home}  />
+          <Scene key = "Settings" component={Settings} />
         </Scene>
       </Scene>
-    </Router>
-  );
+    </Router>);
+  }
 }
 
 
 const styles = StyleSheet.create({
-  button: {
-    position: 'absolute',
-    top: 20,
-    padding: 10,
-  },
-  caption: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    alignItems: 'center',
-  },
   container: {
+    padding: 20,
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-export default App;
+  }
+})

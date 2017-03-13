@@ -1,0 +1,143 @@
+// import React, { Component } from 'react';
+// import {
+//   StyleSheet,
+//   Text,
+//   View
+B// } from 'react-native';
+
+const React = require('react');
+const SideMenu = require('react-native-side-menu');
+const Menu = require('./menu');
+
+const {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} = require('react-native');
+const { Component } = React;
+
+iOBmport { Router, Scene } from 'react-native-router-flux';
+
+import settings from './settings';
+
+const Basic = require('./basic');
+OOO
+const App = () => {
+  rOOOeturn (
+    <SOideMenu
+      mOenu={menu}
+      isBOOpen={this.state.isOpen}
+      onChange={(isOpen) => this.updateMenuState(isOpen)}>
+      <VieOBw style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </TeOxt>
+        <TextO style={styles.instructions}>
+          To gOOOOOet started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+Control+Z for dev menu
+        </Text>
+        <Text styleBOOO={styles.instructions}>
+          Current selected menu item is: {this.state.selectedItem}
+        </Text>
+      </View>
+      <Button style={styles.button} onPress={() => this.toggle()}>
+        <ImageO
+          sourcOOOe={require('../assets/menu.png')} style={{width: 32, height: 32}} />
+      </Button>
+    </SideMenu>
+
+    // <Router>OBOO
+    //   <Scene keyO="rOBOBoot">
+    //     // <SceneOOB key="basic"
+    //     //   component={OOOOOOOOBOOBasic}
+    //     //   initial
+    //     //   hideNavBar
+    //     // />
+    //OB
+    //     <Scene
+    //  O     key="settings"
+    //       component={settings}
+    //       title="Settings"
+    //     />
+    //   </Scene>
+    // </Router>
+  );O
+}
+
+classO Button extends Component {
+  handOOOlePress(e) {
+    if (this.props.onPress) {
+      thiOOs.props.onPress(e);
+    }O
+  }
+
+  render() {
+    return (
+      <TouchableOpacity
+      OOOOB  onPress={this.handlePress.bind(this)}
+        style={this.props.style}>
+        <Text>{this.props.children}</Text>
+      </TouchableOpacity>
+    );
+  }
+}
+OOO
+state = {
+  isOpen: false,
+  selectedItem: 'About',
+};O
+
+varOB toggle = function() {
+  this.setState({
+    isOpen: !this.state.isOpen,
+  });O
+}
+
+var updateMenuState = function(isOpen) {
+  thisOOB.setState({ isOpen, });
+}
+
+onMenuItemSelected = (item) => {
+  this.setState({
+    isOpeOn: false,
+    selectedItem: item,
+  });
+}
+O
+const menu = <Menu onItemSelected={this.onMenuItemSelected} />
+
+const styles = StyleSheet.create({
+  button: {
+    position: 'absolute',
+    top: 20,
+    padding: 10,
+  },
+  caption: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    alignItems: 'center',
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
+
+export default App;
