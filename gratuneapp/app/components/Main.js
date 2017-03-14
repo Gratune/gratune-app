@@ -24,8 +24,6 @@ class NavBar extends Component {
       <View style={styles.containerNav}>
         <Tabs selected={this.state.page} style={{backgroundColor:'#30323D'}}
               selectedStyle={{color:'#5C80BC'}} onSelect={el=>this.setState({page:el.props.name})}>
-        <Tabs selected={this.state.page} style={{backgroundColor:'white'}}
-              selectedStyle={{color:'red'}} onSelect={el=>this.setState({page:el.props.name})}>
             <Text name="home" selectedIconStyle={styles.selectedIconStyle}>Home</Text>
             <Text name="second" selectedIconStyle={styles.selectedIconStyle}>Second</Text>
             <Text name="third" selectedIconStyle={styles.selectedIconStyle}>Third</Text>
