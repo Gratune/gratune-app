@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 64,
     flex: 1,
-    // justifyContent: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#30323D',
   },
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#CDD1C4',
     width: 350,
     borderRadius: 5,
+    marginBottom: 64
   },
   heading1: {
     fontSize: 24,
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
 });
 
 
-class Home extends Component {
+class Schedule extends Component {
   constructor(props) {
     super(props)
     const getRowData = (dataBlob, rowId) => dataBlob[`${rowId}`];
@@ -53,15 +54,8 @@ class Home extends Component {
       rowHasChanged: (r1, r2) => r1 !== r2,
     });
 
-    const upcoming = [];
-
-    for (let i = 0; i < 3; i++) {
-      let record = demoData[i];
-      upcoming.push(record);
-    }
-
     this.state = {
-      dataSource: ds.cloneWithRows(upcoming)
+      dataSource: ds.cloneWithRows(demoData)
     }
   }
 
@@ -69,24 +63,20 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.heading1}>Upcoming Shows</Text>
-        <View style={{height:200}}>
-          <ListView
-            contentContainerStyle={styles.concertContainer}
-            dataSource={this.state.dataSource}
-            renderRow={(data) => <Row {...data} />}
-          />
-        </View>
-        <Text style={styles.heading1}>Stats</Text>
-        <View style={{height:200}}>
-        </View>
+        <Text style={styles.heading1}>Full Schedule</Text>
+
+        <ListView
+          contentContainerStyle={styles.concertContainer}
+          dataSource={this.state.dataSource}
+          renderRow={(data) => <Row {...data} />}
+        />
       </View>
 
     );
   }
 }
 
-Home.contextTypes = contextTypes;
-Home.propTypes = propTypes;
+Schedule.contextTypes = contextTypes;
+Schedule.propTypes = propTypes;
 
-export default Home;
+export default Schedule;

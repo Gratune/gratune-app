@@ -14,6 +14,7 @@ import NavigationDrawer from './app/components/venue/Nav';
 import TabIcon from './app/components/venue/TabIcon';
 import TabView from './app/components/venue/TabView';
 import Home from './app/components/venue/Home';
+import Schedule from './app/components/venue/Schedule';
 
 
 export default class gratuneapp extends Component {
@@ -43,7 +44,7 @@ export default class gratuneapp extends Component {
                 />
                 <Scene
                   key="schedule"
-                  component={Settings}
+                  component={Schedule}
                   title="Schedule"
                   icon={TabIcon}
                   navigationBarStyle={styles.navbarstyle}
