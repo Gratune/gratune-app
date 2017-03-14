@@ -1,4 +1,20 @@
-import { AppRegistry } from 'react-native';
-import App from './app';
+import React, { Component } from 'react';
+import {Provider} from 'react-redux';
+import {
+  AppRegistry,
+} from 'react-native';
 
-AppRegistry.registerComponent('gratuneapp', () => App);
+import {configureStore} from './app/store';
+import Main from './app/components/Main';
+
+export default class Gratune extends Component {
+  render() {
+    return (
+      <Provider store={configureStore()}>
+        <Main />
+      </Provider>
+    );
+  }
+}
+
+AppRegistry.registerComponent('Gratune', () => Gratune);
