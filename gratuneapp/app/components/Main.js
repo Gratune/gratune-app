@@ -11,10 +11,12 @@ import {
 
 import Tabs from 'react-native-tabs'
 
+import {changeText} from '../actions';
+
 class NavBar extends Component {
   constructor(props){
     super(props);
-    this.state = {page:'second'};
+    this.state = {page:'home'};
   }
   render() {
     var self = this;
@@ -22,7 +24,7 @@ class NavBar extends Component {
       <View style={styles.containerNav}>
         <Tabs selected={this.state.page} style={{backgroundColor:'white'}}
               selectedStyle={{color:'red'}} onSelect={el=>this.setState({page:el.props.name})}>
-            <Text name="Home" selectedIconStyle={styles.selectedIconStyle}>Home</Text>
+            <Text name="home" selectedIconStyle={styles.selectedIconStyle}>Home</Text>
             <Text name="second" selectedIconStyle={styles.selectedIconStyle}>Second</Text>
             <Text name="third" selectedIconStyle={styles.selectedIconStyle}>Third</Text>
             <Text name="fourth" selectedIconStyle={styles.selectedIconStyle}>Fourth</Text>
@@ -38,13 +40,32 @@ var height = Dimensions.get('window').height
 
 var Main = React.createClass({
   render() {
+
     var renderNavbar = () => {
       return (
         <NavBar />
       )
     }
+
     return (
     <View style={styles.container}>
+      <View style={styles.containerHeader}>
+        <Text style={styles.headerText}>{this.props.headertext}</Text>
+      </View>
+
+      <View style={styles.main}>
+        <View style={styles.box}>
+          <Text>{this.props.text}</Text>
+        </View>
+        <View style={styles.box}>
+          <Text>Box 2</Text>
+        </View>
+
+        <View style={styles.box}>
+          <Text>Box 3</Text>
+        </View>
+      </View>
+
       <View>{renderNavbar()}</View>
     </View>
     )
@@ -58,10 +79,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  containerNav: {
-    flex: 1,
+  containerHeader: {
+    backgroundColor: '#30323D',
+    width: width,
+    padding: 16,
+    paddingTop: 20,
+    paddingBottom: 8,
+    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
+  },
+  headerText: {
+    color: 'white',
+    fontSize: 20
+  },
+  containerNav: {
     backgroundColor: '#F5FCFF',
     width: width,
   },
@@ -78,14 +110,28 @@ const styles = StyleSheet.create({
   selectedIconStyle: {
     borderTopWidth: 2,
     borderTopColor: 'red'
+  },
+  main: {
+    flex: 1,
+    padding: 50
+  },
+  box: {
+    backgroundColor: 'gray',
+    borderWidth: 1,
+    borderColor: 'black',
+    margin: 5,
+    width: 300,
+    padding: 10,
+    height: 100,
+
   }
 });
 
 var mapStateToProps = (state) => {
   return {
-    todos: state.todos
+    headertext: state.headertext,
+    text: state.text
   }
 }
-
 
 module.exports = connect(mapStateToProps)(Main)

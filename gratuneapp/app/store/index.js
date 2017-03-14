@@ -2,7 +2,8 @@ import {createStore} from 'redux'
 import reducer from '../reducer'
 
 var defaultState = {
-  text: 'Default text'
+  headertext: 'Gratune',
+  text: 'Sample text'
 }
 
 exports.configureStore = (initialState=defaultState) => {
