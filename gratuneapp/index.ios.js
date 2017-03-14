@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 
 import {configureStore} from './app/store';
-import Main from './app/components/Main';
+import Main from './app/components/venue/Main';
 
 export default class gratuneapp extends Component {
   render() {
