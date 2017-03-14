@@ -8,8 +8,8 @@ import {
 import { Router, Scene } from 'react-native-router-flux';
 
 import login from './login';
-import musicList from './music-list';
-
+import userDash from './user-dash';
+import allVenues from './all-venues';
 
 const App = () => {
   return (
@@ -22,12 +22,19 @@ const App = () => {
         />
       </Scene>
       <Scene key="root">
-        <Scene key="Music List"
-          component={musicList}
-          title="All Events"
+        <Scene key="User Dashboard"
+          component={userDash}
+          title="Welcome"
           initial
           />
         </Scene>
+        <Scene key="root">
+          <Scene key="Music List"
+            component={allVenues}
+            title="See All Venues"
+            initial
+            />
+          </Scene>
     </Router>
   );
 }
