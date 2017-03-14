@@ -5,13 +5,14 @@ import {
 } from 'react-native';
 
 import {configureStore} from './app/store';
-import Main from './app/components/venue/Main';
+import Main from './app/components/user/Main';
+import Venues from './app/components/user/Venues';
 
 export default class gratuneapp extends Component {
   render() {
     return (
       <Provider store={configureStore()}>
-        <Main />
+        <Venues />
       </Provider>
     );
   }
