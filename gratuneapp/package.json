@@ -9,18 +9,9 @@
   "dependencies": {
     "react": "~15.4.1",
     "react-native": "0.42.0",
-    "react-native-animatable": "^1.1.0",
-    "react-native-button": "^1.8.2",
-    "react-native-card-view": "0.0.3",
-    "react-native-material-design": "^0.3.7",
     "react-native-router-flux": "^3.38.0",
-    "react-native-scrollable-tab-view": "^0.7.2",
-    "react-native-swipe-list-view": "^0.4.0",
-    "react-native-tab-view": "0.0.57",
     "react-native-tabs": "^1.0.9",
-    "react-redux": "^5.0.3",
-    "react-router-native": "^4.0.0",
-    "redux": "^3.6.0"
+    "realm": "^1.1.1"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
