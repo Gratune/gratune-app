@@ -3,7 +3,8 @@ import reducer from '../reducer'
 
 var defaultState = {
   headertext: 'Gratune',
-  text: 'Sample text'
+  text: 'Sample text',
+  page: 'Home'
 }
 
 exports.configureStore = (initialState=defaultState) => {
