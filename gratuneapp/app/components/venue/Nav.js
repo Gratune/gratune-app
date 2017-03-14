@@ -15,7 +15,9 @@ import {
   changePage4,
   changePage5
 } from '../../actions';
+
 import Tabs from 'react-native-tabs';
+import { Actions } from 'react-native-router-flux';
 
 var width = Dimensions.get('window').width
 var height = Dimensions.get('window').height
@@ -69,7 +71,7 @@ var Nav = React.createClass({
               Profile
           </Text>
           <Text
-            onPress={this.changePage5}
+            onPress={Actions.settings}
             name="Settings"
             selectedIconStyle={styles.selectedIconStyle}>
               Settings
