@@ -14,15 +14,15 @@ import Tabs from 'react-native-tabs'
 class NavBar extends Component {
   constructor(props){
     super(props);
-    this.state = {page:'second'};
+    this.state = {page:'home'};
   }
   render() {
     var self = this;
     return (
       <View style={styles.containerNav}>
-        <Tabs selected={this.state.page} style={{backgroundColor:'white'}}
-              selectedStyle={{color:'red'}} onSelect={el=>this.setState({page:el.props.name})}>
-            <Text name="Home" selectedIconStyle={styles.selectedIconStyle}>Home</Text>
+        <Tabs selected={this.state.page} style={{backgroundColor:'#30323D'}}
+              selectedStyle={{color:'#5C80BC'}} onSelect={el=>this.setState({page:el.props.name})}>
+            <Text name="home" selectedIconStyle={styles.selectedIconStyle}>Home</Text>
             <Text name="second" selectedIconStyle={styles.selectedIconStyle}>Second</Text>
             <Text name="third" selectedIconStyle={styles.selectedIconStyle}>Third</Text>
             <Text name="fourth" selectedIconStyle={styles.selectedIconStyle}>Fourth</Text>
@@ -56,13 +56,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#30323D',
   },
   containerNav: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#4D5061',
     width: width,
   },
   welcome: {
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   selectedIconStyle: {
     borderTopWidth: 2,
-    borderTopColor: 'red'
+    borderTopColor: '#5C80BC'
   }
 });
 
