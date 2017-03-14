@@ -7,7 +7,7 @@ import {
 import {configureStore} from './app/store';
 import Main from './app/components/Main';
 
-export default class Gratune extends Component {
+export default class gratuneapp extends Component {
   render() {
     return (
       <Provider store={configureStore()}>
@@ -17,4 +17,4 @@ export default class Gratune extends Component {
   }
 }
 
-AppRegistry.registerComponent('Gratune', () => Gratune);
+AppRegistry.registerComponent('gratuneapp', () => gratuneapp);
