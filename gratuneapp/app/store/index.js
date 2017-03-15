@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import {persistStore, autoRehydrate} from 'redux-persist';
 import reducer from '../reducer';
 
-var defaultState = {
-  headertext: 'Gratune',
-  text: 'Sample text',
-  page: 'Home'
-}
+// var defaultState = {
+//   headertext: 'Gratune',
+//   text: 'Sample text',
+//   page: 'Home'
+// }
+
+var defaultState = {}
 
 exports.configureStore = (initialState=defaultState) => {
   return createStore(reducer, initialState, compose(

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { reduxForm} from 'redux-form';
+import { reduxForm } from 'redux-form';
 import{
   StyleSheet,
   Text,
@@ -11,7 +11,7 @@ import{
   NavigatorIOS
 } from 'react-native';
 
-import {loginUser, signupUser} from '../actions/auth'
+import {loginUser, signupUser} from '../../actions/auth'
 import VenueSetup from './VenueSetup'
 
 
@@ -48,7 +48,7 @@ var SignupPage = React.createClass({
       <View style={styles.imageContainer}>
       <Image style = {styles.image}
         source = {
-            require('../image/gnote.png')
+            require('../../image/gnote.png')
         }/>
     </View>
       <View style={styles.titleContainer}>

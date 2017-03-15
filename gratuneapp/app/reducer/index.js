@@ -1,37 +1,12 @@
 import {combineReducers} from 'redux';
 import {reducer as formReducer} from 'redux-form';
-import authReducer from './authReducer'
+import authReducer from './authReducer';
+import navReducer from './navReducer';
 
 var defaultState = {};
 
-module.exports = combineReducers({
+module.exports = combineReducers ({
   form: formReducer,
-  auth: authReducer
+  auth: authReducer,
+  nav: navReducer,
 });
-
-module.exports = (state, action) => {
-  switch (action.type) {
-    case 'CHANGE_PAGE_1':
-      return {
-        page: 'Home'
-      }
-    case 'CHANGE_PAGE_2':
-      return {
-        page: 'Schedule'
-      }
-    case 'CHANGE_PAGE_3':
-      return {
-        page: 'Stats'
-      }
-    case 'CHANGE_PAGE_4':
-      return {
-        page: 'Profile'
-      }
-    case 'CHANGE_PAGE_5':
-      return {
-        page: 'Settings'
-      }
-    default:
-      return state
-    }
-}
