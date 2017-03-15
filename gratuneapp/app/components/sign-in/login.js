@@ -68,7 +68,8 @@ var Login = React.createClass({
         <TextInput
         {...password}
         placeholder = "Password"
-        style={styles.input}/>
+        style={styles.input}
+        secureTextEntry/>
         <View>
         {renderError(password)}
         </View>

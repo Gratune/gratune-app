@@ -22,8 +22,8 @@ exports.signupUser = (name,email,password,confirmpassword) => {
   return function(dispatch) {
     return axios.post(SIGNUP_URL, {name,email,password,confirmpassword})
     .then((res)=>{
-      var {user_id, token}= res.data;
-      dispatch(authUser(user_id));
+      var {user_id, token, type}= res.data;
+      dispatch(authUser(user_id,type));
       console.log(token)
     })
     .catch((error)=>{

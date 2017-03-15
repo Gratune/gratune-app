@@ -29,7 +29,6 @@ var SignupPage = React.createClass({
   },
   onSignUp: function(){
     var {dispatch, fields: {name, email, password, confirmpassword}} = this.props;
-    console.log(this.props.fields)
     dispatch(signupUser(name.value, email.value, password.value, confirmpassword.value))
     console.log("working",email.value)
   },
@@ -83,7 +82,8 @@ var SignupPage = React.createClass({
         <TextInput
         {...password}
         placeholder = "Password"
-        style={styles.input}/>
+        style={styles.input}
+        secureTextEntry/>
         <View>
         {renderError(password)}
         </View>
@@ -92,7 +92,8 @@ var SignupPage = React.createClass({
         <TextInput
         {...confirmpassword}
         placeholder = "Confirm Password"
-        style={styles.input}/>
+        style={styles.input}
+        secureTextEntry/>
         <View>
         {renderError(password)}
         </View>

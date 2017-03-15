@@ -86,7 +86,8 @@ var VenueSetup = React.createClass({
         <TextInput
         {...password}
         placeholder = "Password"
-        style={styles.input}/>
+        style={styles.input}
+        secureTextEntry/>
         <View>
         {renderError(password)}
         </View>
@@ -95,7 +96,8 @@ var VenueSetup = React.createClass({
         <TextInput
         {...confirmpassword}
         placeholder = "Confirm Password"
-        style={styles.input}/>
+        style={styles.input}
+        secureTextEntry/>
         <View>
         {renderError(password)}
         </View>
