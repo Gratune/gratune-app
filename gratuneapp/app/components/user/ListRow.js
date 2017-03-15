@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 import Dimensions from 'Dimensions'
 import BlurImage from 'react-native-blur-image'
+
 const screen = Dimensions.get('window')
 
 export default class Row extends Component {
@@ -55,7 +56,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    padding: 3
   },
 
   text: {

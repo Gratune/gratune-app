@@ -13,7 +13,6 @@ import Venue from './Venue'
 const RouteMapper = (route, navigationOperations, onComponentRef) => {
   if (route.name === 'venueList') {
     return (
-      // TODO: Add venueList component
       <MockVenues navigator={navigationOperations} />
     )
   } else if (route.name === 'venue') {
@@ -34,13 +33,9 @@ export default class App extends Component {
 
   render() {
     return (
-      // Handle navigation between screens
       <Navigator
-      // Default to list route
         initialRoute={{name: 'venueList'}}
-        // Use FloatFromBottom transition between screens
         configureScreen={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottom}
-        // Pass a route mapper function
         renderScene={RouteMapper}
       />
     )
