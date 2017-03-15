@@ -8,13 +8,15 @@ import {
   View
 } from 'react-native'
 
+import BlurImage from 'react-native-blur-image'
+
 export default class Movie extends Component {
   render({ venue } = this.props) {
     const { name, address, time, event, largeImg, summary } = venue
     return (
       <View style={styles.container}>
 
-        <Image source={{uri: largeImg}} style={styles.imageBackground}>
+        <BlurImage source={{uri: largeImg}} style={styles.imageBackground} blurRadius={35}>
 
           <ScrollView
             style={{flex: 1}}
@@ -43,7 +45,7 @@ export default class Movie extends Component {
               <Text style={styles.buttonText}>Back to Venues</Text>
             </TouchableOpacity>
           </View>
-        </Image>
+        </BlurImage>
       </View>
     )
   }

@@ -7,7 +7,7 @@ import {
   View
 } from 'react-native'
 import Dimensions from 'Dimensions'
-
+import BlurImage from 'react-native-blur-image'
 const screen = Dimensions.get('window')
 
 export default class Row extends Component {
@@ -23,14 +23,14 @@ export default class Row extends Component {
         activeOpacity={0.8}
       >
 
-        <Image source={{uri: smallImg}} style={styles.imageBackground}>
+        <BlurImage source={{uri: smallImg}} style={styles.imageBackground} blurRadius={20}>
 
           <Text style={[styles.text, styles.title]}>{name.toUpperCase()}</Text>
 
-          <Text style={styles.text}>{event}</Text>
+          <Text style={styles.text, styles.event}>{event}</Text>
 
           <Text style={styles.text}>{time}</Text>
-        </Image>
+        </BlurImage>
       </TouchableOpacity>
     )
   }
@@ -56,6 +56,17 @@ const styles = StyleSheet.create({
     textShadowColor: '#222',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 4,
+  },
+
+  event: {
+    color: '#fff',
+    backgroundColor: 'transparent',
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    textShadowColor: '#222',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 4,
+    fontSize: 18
   },
 
   title: {
