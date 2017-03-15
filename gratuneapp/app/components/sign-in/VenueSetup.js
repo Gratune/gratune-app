@@ -18,22 +18,21 @@ import Login from './login'
 
 var VenueSetup = React.createClass({
   UserSignup: function(){
+
     this.props.navigator.pop()
   },
   onSignin: function(){
-    this.props.navigator.push({
-      component: Login,
-      title: "home",
-      navigationBarHidden:true
-    })
-
+    this.props.navigator.popToTop()
 
   },
   onSignUp: function(){
     var {dispatch, fields: {name,email, password,confirmpassword,liquor}} = this.props;
-    console.log(this.props.fields)
+    console.log("know it",this.props.fields)
     dispatch(signupVenue(name.value, email.value, password.value, confirmpassword.value, liquor.value))
-    console.log("working",email.value)
+    if (name.value&& email.value&& password.value&& confirmpassword.value&& liquor.value){
+      this.props.navigator.popToTop()
+    }
+
   },
   render(){
     var {fields: {name,email, password, confirmpassword, liquor}} = this.props;

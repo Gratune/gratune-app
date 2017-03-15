@@ -13,13 +13,15 @@ import{
 } from 'react-native';
 
 import {loginUser, signupUser} from '../../actions/auth'
+import {addAlert} from '../../actions/alerts'
 import SignupPage from './SignupPage'
 
 
 var Login = React.createClass({
   onSignin: function(){
     var {dispatch, fields: {email, password}} = this.props;
-    dispatch(loginUser(email.value, password.value))
+    dispatch(loginUser(email.value, password.value));
+    dispatch(addAlert("hey"))
   },
   onSignUp: function(){
     this.props.navigator.push({
@@ -27,9 +29,6 @@ var Login = React.createClass({
       title: "sign up",
       navigationBarHidden:true
     })
-    // var {dispatch, fields: {email, password}} = this.props;
-    // dispatch(signupUser(email.value, password.value))
-    // console.log("working",email.value)
   },
   render(){
     var {fields: {email, password}} = this.props;

@@ -31,6 +31,9 @@ var SignupPage = React.createClass({
     var {dispatch, fields: {name, email, password, confirmpassword}} = this.props;
     dispatch(signupUser(name.value, email.value, password.value, confirmpassword.value))
     console.log("working",email.value)
+    if (name.value&& email.value&& password.value&& confirmpassword.value&& liquor.value){
+      this.props.navigator.popToTop()
+    }
   },
   render(){
     var {fields: {name,email, password, confirmpassword}} = this.props;
