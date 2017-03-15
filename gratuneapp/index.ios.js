@@ -8,6 +8,7 @@ import {
 import { Router, Scene } from 'react-native-router-flux';
 
 import {configureStore} from './app/store';
+
 import Main from './app/components/venue/Main';
 import Settings from './app/components/venue/Settings';
 import NavigationDrawer from './app/components/venue/Nav';
@@ -15,7 +16,8 @@ import TabIcon from './app/components/venue/TabIcon';
 import TabView from './app/components/venue/TabView';
 import Home from './app/components/venue/Home';
 import Schedule from './app/components/venue/Schedule';
-
+import UserMain from './app/components/user/Main';
+import UserVenues from './app/components/user/Venues';
 
 export default class gratuneapp extends Component {
   render() {
@@ -78,7 +80,6 @@ export default class gratuneapp extends Component {
             </Scene>
           </Scene>
         </Router>
-
       </Provider>
     );
   }
