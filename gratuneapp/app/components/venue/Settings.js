@@ -9,18 +9,20 @@ import {
 } from 'react-native'
 
 import Header from './Header';
+import Nav from './Nav';
 
-var Main = React.createClass({
+var Settings = React.createClass({
   render() {
     return (
     <View style={styles.container}>
       <Header />
 
       <View style={styles.main}>
-        <Text>Main Component</Text>
+        <Text>Settings Component</Text>
         <Text>{this.props.page}</Text>
       </View>
 
+      <Nav />
     </View>
     )
   }
@@ -47,4 +49,4 @@ var mapStateToProps = (state) => {
   }
 }
 
-module.exports = connect(mapStateToProps)(Main)
+module.exports = connect(mapStateToProps)(Settings)
