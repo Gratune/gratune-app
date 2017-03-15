@@ -51,7 +51,7 @@ const VenueData = [
     event: 'Happy Hour with Buckner Funken\'',
     smallImg: 'https://i.ytimg.com/vi/HhaJGluu73k/maxresdefault.jpg',
     largeImg: 'https://media-cdn.tripadvisor.com/media/photo-s/0e/03/3a/a3/dotsero-jazz-jack-s.jpg',
-    summary: "You can find a lot more than jazz going on down at Jack’s. Every night you can catch the best funk, blues, oldies, reggae, and tribute shows Denver has to offer - all right here at Jazz@Jack’s! Whether you’re looking to heat it up and get down or just kick back, Jack’s has got something for you. Always cool. Always live."
+    summary: "Every night you can catch the best funk, blues, oldies, reggae, and tribute shows Denver has to offer - all right here at Jazz@Jack’s! Whether you’re looking to heat it up and get down or just kick back, Jack’s has got something for you. Always cool. Always live."
   }
 ]
 
