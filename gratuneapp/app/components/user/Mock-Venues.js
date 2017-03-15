@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {
   ListView,
   RefreshControl,
-  Text
+  Text,
+  View
 } from 'react-native'
 
 import ListRow from './ListRow'
@@ -93,6 +94,7 @@ export default class VenueList extends Component {
 
   render() {
     return (
+      <View style={{marginTop: 64, paddingTop: 10, backgroundColor: '#30323D', marginBottom: 50}}>
       <ListView
         dataSource={this.state.dataSource}
         renderRow={this._renderRow}
@@ -103,6 +105,7 @@ export default class VenueList extends Component {
           />
         }
       />
+  </View>
     )
   }
 }

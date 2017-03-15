@@ -42,7 +42,7 @@ export default class Row extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#CDD1C4'
+    backgroundColor: '#30323D',
   },
 
   row: {
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: '#fff',
+    color: '#CDD1C4',
     backgroundColor: 'transparent',
     fontFamily: 'Avenir',
     fontWeight: 'bold',
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
 
   event: {
-    color: '#fff',
+    color: '#CDD1C4',
     backgroundColor: 'transparent',
     fontFamily: 'Avenir',
     fontWeight: 'bold',

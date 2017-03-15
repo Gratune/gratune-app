@@ -9,17 +9,18 @@ import {
 } from 'react-native'
 
 import Header from './Header';
-import Nav from './Nav';
 
 var Main = React.createClass({
   render() {
     return (
     <View style={styles.container}>
       <Header />
+
       <View style={styles.main}>
+        <Text>Main Component</Text>
         <Text>{this.props.page}</Text>
       </View>
-      <Nav />
+
     </View>
     )
   }

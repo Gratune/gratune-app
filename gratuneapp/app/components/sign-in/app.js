@@ -7,7 +7,7 @@ import{
 
 import Login from './login'
 import Main from './main'
-import UserPage from '../user/Venues'
+import UserPage from '../user/App'
 import VenuePage from '../venue/App'
 
 
@@ -29,7 +29,7 @@ var App = React.createClass({
     } else {
 
       return(
-        <Main/>
+        <UserPage/>
       )
     }
   }
