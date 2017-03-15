@@ -8,6 +8,8 @@ import {
   StatusBar
 } from 'react-native';
 
+import FontAwesome from 'react-native-fontawesome'
+
 import {
   changePage1,
   changePage2,
