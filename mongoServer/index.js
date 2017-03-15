@@ -7,7 +7,14 @@ var app = express()
 
 var router = require('./services/router')
 
-mongoose.connect('mongodb://localhost:introToAuth/introToAuth')
+if (process.env.NODE_ENV =="production"){
+  mongoose.connect(process.env.MONGO_URL)
+
+}else{
+  mongoose.connect('mongodb://localhost:introToAuth/introToAuth')
+
+}
+
 
 
 app.use(morgan('combined'));
@@ -15,8 +22,7 @@ app.use(bodyParser.json())
 app.use('/v1', router)
 
 var PORT = process.env.PORT || 3000;
-var HOST = process.env.HOST || '127.0.0.1'
 
-console.log ("On Host and Port:", HOST, PORT)
+console.log ("On Host and Port:", PORT)
 
-app.listen(PORT,HOST)
+app.listen(PORT)
