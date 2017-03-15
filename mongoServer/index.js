@@ -9,6 +9,7 @@ var router = require('./services/router')
 
 mongoose.connect('mongodb://localhost:introToAuth/introToAuth')
 
+
 app.use(morgan('combined'));
 app.use(bodyParser.json())
 app.use('/v1', router)

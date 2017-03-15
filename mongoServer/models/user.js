@@ -7,6 +7,9 @@ const bcrypt = require('bcrypt-nodejs')
 // }
 
 var userSchema = new Schema ({
+  name:{
+    type:String
+  },
   email:{
     type: String,
     unique: true,
@@ -15,6 +18,9 @@ var userSchema = new Schema ({
     // validate: [validateEmail, 'Please enter a valid email']
   },
   password:{
+    type:String
+  },
+  type:{
     type:String
   }
 })

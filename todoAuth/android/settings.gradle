@@ -1,3 +1,0 @@
-rootProject.name = 'todoAuth'
-
-include ':app'

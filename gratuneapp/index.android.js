@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-export default class gratuneapp extends Component {
+export default class todoAuth extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('gratuneapp', () => gratuneapp);
+AppRegistry.registerComponent('todoAuth', () => todoAuth);

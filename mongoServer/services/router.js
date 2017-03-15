@@ -13,6 +13,11 @@ var router = require('express').Router();
 router.route("/signup")
 .post(AuthenticationController.signup)
 
+
+router.route("/venue")
+.post(AuthenticationController.venue)
+
+
 router.route("/signin")
 .post([requireLogin,AuthenticationController.signin])
 

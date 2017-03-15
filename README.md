@@ -1,2 +1,2 @@
 # gratune-app
-![](/gratuneapp/images/gratunelogo.png)
+![](/gratuneapp/gratunelogo.png)
