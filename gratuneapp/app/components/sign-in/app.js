@@ -8,7 +8,7 @@ import{
 import Login from './login'
 import Main from './main'
 import UserPage from '../user/Venues'
-import VenuePage from '../venue/Main'
+import VenuePage from '../venue/App'
 
 
 
