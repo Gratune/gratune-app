@@ -1,3 +1,14 @@
+import {combineReducers} from 'redux';
+import {reducer as formReducer} from 'redux-form';
+import authReducer from './authReducer'
+
+var defaultState = {};
+
+module.exports = combineReducers({
+  form: formReducer,
+  auth: authReducer
+});
+
 module.exports = (state, action) => {
   switch (action.type) {
     case 'CHANGE_PAGE_1':

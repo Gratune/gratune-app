@@ -32,3 +32,5 @@ exports.changePage5 = (page) => {
     page
   }
 }
+
+export * form './auth';
