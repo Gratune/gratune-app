@@ -8,7 +8,7 @@ import{
 import Login from './login'
 import Main from './main'
 import UserPage from '../user/Venues'
-import VenuePage from './venuepage'
+import VenuePage from '../venue/Main'
 
 
 
@@ -42,4 +42,4 @@ var mapStateToProps = (state) =>{
   }
 }
 
-module.exports = App;
+module.exports = connect(mapStateToProps)(App);
