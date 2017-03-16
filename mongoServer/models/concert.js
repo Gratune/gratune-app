@@ -13,4 +13,10 @@ var concertSchema = new Schema ({
   }
 })
 
+
+concertSchema.pre('save', function(next){
+  next();
+
+})
+
 module.exports = mongoose.model('concert', concertSchema)

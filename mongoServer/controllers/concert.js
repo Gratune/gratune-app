@@ -1,5 +1,4 @@
 const Concert = require('../models/concert')
-const config = require('../config')
 
 
 exports.add = function (req, res, next) {
