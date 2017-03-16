@@ -7,13 +7,15 @@ import {
 } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
 
+import MainLogin from '../sign-in/main'
 import Main from './Main';
-import Settings from './Settings';
 import NavBar from './Nav';
+import Schedule from './Schedule';
+import Venues from './Venues';
+import Account from './Account';
 import TabIcon from './TabIcon';
 import TabView from './TabView';
-import Home from './Home';
-import Venues from './Venues';
+import Favorites from './Favorites';
 
 export default class App extends Component {
   render() {
@@ -21,8 +23,9 @@ export default class App extends Component {
         <Router>
           <Scene key="root">
             <Scene initial={true} hideNavBar={true} key="main" component={Main} title="Main" />
+            <Scene hideNavBar={true} key="loginPage" component={MainLogin} title="loginPage" />
 
-            <Scene hideNavBar={true} key="settings" component={Settings} title="Settings" />
+            <Scene hideNavBar={true} key="account" component={Account} title="Account" />
 
             <Scene key="tabbar" component={NavBar}>
               <Scene
@@ -32,15 +35,7 @@ export default class App extends Component {
                 tabBarSelectedItemStyle={styles.tabBarSelectedItemStyle}
               >
                 <Scene
-                  key="home"
-                  component={TabView}
-                  title="Home"
-                  icon={TabIcon}
-                  navigationBarStyle={styles.navbarstyle}
-                  titleStyle={styles.navbartitle}
-                />
-                <Scene
-                  key="schedule"
+                  key="Schedule"
                   component={Venues}
                   title="Schedule"
                   icon={TabIcon}
@@ -48,25 +43,17 @@ export default class App extends Component {
                   titleStyle={styles.navbartitle}
                 />
                 <Scene
-                  key="profile"
-                  component={TabView}
-                  title="Profile"
+                  key="Favorites"
+                  component={Favorites}
+                  title="Favorites"
                   icon={TabIcon}
                   navigationBarStyle={styles.navbarstyle}
                   titleStyle={styles.navbartitle}
                 />
                 <Scene
-                  key="stats"
-                  component={TabView}
-                  title="Stats"
-                  icon={TabIcon}
-                  navigationBarStyle={styles.navbarstyle}
-                  titleStyle={styles.navbartitle}
-                />
-                <Scene
-                  key="settings"
-                  component={TabView}
-                  title="Setttings"
+                  key="Account"
+                  component={Account}
+                  title="Account"
                   icon={TabIcon}
                   navigationBarStyle={styles.navbarstyle}
                   titleStyle={styles.navbartitle}
