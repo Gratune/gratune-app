@@ -1,5 +1,6 @@
 const passport = require('passport');
 const AuthenticationController = require('../controllers/authentication')
+const ConcertController = require('../controllers/concert')
 const passportServuce = require('./passport');
 const shows = require('../controllers/shows');
 
@@ -19,14 +20,7 @@ router.route("/venue")
 router.route("/signin")
 .post([requireLogin,AuthenticationController.signin])
 
-router.route("/newshow")
-.post(shows.newShow)
-
-// function protected(req,res,next){
-//   res.send("here it is")
-// }
-//
-// router.route('/protected')
-// .get(requireAuth, protected)
+router.route("/addEvent")
+.post(ConcertController.add)
 
 module.exports = router

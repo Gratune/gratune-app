@@ -29,7 +29,7 @@ var App = React.createClass({
     } else {
 
       return(
-        <Main/>
+        <VenuePage/>
       )
     }
   }
