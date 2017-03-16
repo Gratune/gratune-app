@@ -9,8 +9,7 @@ import {
 } from "react-native";
 import Button from 'react-native-button';
 import { Actions } from 'react-native-router-flux';
-import Row from './Row';
-import Venues from '.Venues'
+import Venues from './Venues'
 
 const contextTypes = {
   drawer: React.PropTypes.object,

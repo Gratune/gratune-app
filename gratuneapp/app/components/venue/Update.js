@@ -131,7 +131,8 @@ heading1: {
   fontSize: 24,
   paddingTop: 10,
   paddingBottom:10,
-  color: '#CDD1C4'
+  color: '#CDD1C4',
+  textAlign: 'center'
 }
 
 });

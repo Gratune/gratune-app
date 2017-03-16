@@ -44,18 +44,19 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#30323D',
   },
-
   row: {
-    paddingBottom: 7,
-    paddingLeft: 7,
-    paddingRight: 7,
+    paddingBottom: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
 
   imageBackground: {
     height: screen.height / 5,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 8,
+    borderRadius: 10,
+    borderWidth: 1.5,
+    borderColor: '#CDD1C4'
   },
 
   text: {
@@ -80,6 +81,6 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 22,
+    fontSize: 20,
   }
 })
