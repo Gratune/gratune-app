@@ -21,13 +21,7 @@ var VenueSetup = React.createClass({
     this.props.navigator.pop()
   },
   onSignin: function(){
-    this.props.navigator.push({
-      component: Login,
-      title: "home",
-      navigationBarHidden:true
-    })
-
-
+    this.props.navigator.popToTop()
   },
   onSignUp: function(){
     var {dispatch, fields: {name,email, password,confirmpassword,liquor}} = this.props;
@@ -139,7 +133,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'stretch',
     paddingTop: 20,
-    backgroundColor: "#4d5061"
+    backgroundColor: "#30323d"
   },
   imageContainer: {
       flex:1,
