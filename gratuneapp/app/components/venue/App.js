@@ -14,6 +14,7 @@ import TabIcon from './TabIcon';
 import TabView from './TabView';
 import Home from './Home';
 import Schedule from './Schedule';
+import Update from './Update';
 
 export default class App extends Component {
   render() {
@@ -49,7 +50,7 @@ export default class App extends Component {
                 />
                 <Scene
                   key="profile"
-                  component={TabView}
+                  component={Update}
                   title="Profile"
                   icon={TabIcon}
                   navigationBarStyle={styles.navbarstyle}

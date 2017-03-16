@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {SIGNIN_URL, SIGNUP_URL, VENUE_URL} from '../api'
+import {SIGNIN_URL, SIGNUP_URL, VENUE_URL, ADDVENUE_URL} from '../api'
 
 exports.loginUser = (email,password) => {
   return function(dispatch) {
@@ -43,6 +43,18 @@ exports.signupVenue = (name,email,password,confirmpassword,liqour) => {
     .catch((error)=>{
       console.log(error)
     });
+  }
+}
+
+exports.addEvent = (venue, eventName, eventTime) => {
+  return function(dispatch) {
+    return axios.post(ADDVENUE_URL, {venue, eventName, eventTime})
+    .then((res)=>{
+      console.log(res)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
   }
 }
 
