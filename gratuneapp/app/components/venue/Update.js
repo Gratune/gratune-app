@@ -59,7 +59,7 @@ var Update = React.createClass ({
         </View>
 
         <View style = {styles.button}>
-          <TouchableOpacity onPress = {this.onSignUp}>
+          <TouchableOpacity onPress = {this.addNewEvent}>
             <Text style = {styles.buttonS} >Add</Text>
           </TouchableOpacity>
         </View>
