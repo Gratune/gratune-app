@@ -6,6 +6,7 @@ import {
   Text
 } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
+import {connect} from 'react-redux';
 
 import Main from './Main';
 import Settings from './Settings';
@@ -53,6 +54,7 @@ export default class App extends Component {
                   component={Update}
                   title="Profile"
                   icon={TabIcon}
+                  user_id= {this.props.user_id}
                   navigationBarStyle={styles.navbarstyle}
                   titleStyle={styles.navbartitle}
                 />
@@ -98,3 +100,13 @@ const styles = StyleSheet.create({
   }
 
 });
+
+
+var mapStateToProps = (state) =>{
+  return {
+  user_id: state.auth.user_id,
+  usertype: state.auth.usertype
+  }
+}
+
+module.exports = connect(mapStateToProps)(App);

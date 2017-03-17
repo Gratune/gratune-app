@@ -22,7 +22,14 @@ var userSchema = new Schema ({
   },
   type:{
     type:String
-  }
+  },
+  concerts:[
+    {
+      music:{type:String},
+      time:{type:String}
+    }
+
+  ]
 })
 
 userSchema.pre('save', function(next){

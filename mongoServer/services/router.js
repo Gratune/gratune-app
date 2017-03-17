@@ -5,7 +5,6 @@ const passportServuce = require('./passport');
 
 var requireAuth = passport.authenticate('jwt', {session:false});
 var requireLogin = passport.authenticate('local', {session:false});
-
 var router = require('express').Router();
 
 router.route("/signup")
@@ -18,7 +17,13 @@ router.route("/venue")
 router.route("/signin")
 .post([requireLogin,AuthenticationController.signin])
 
-router.route("/addEvent")
+// router.route("/users/:user_id/concerts")
+// .post(ConcertController.add)
+
+router.route("/concerts")
+.get(requireAuth, ConcertController.index)
+
+router.route("/user/:user_id/concerts")
 .post(ConcertController.add)
 
 module.exports = router

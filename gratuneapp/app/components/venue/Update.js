@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { reduxForm } from 'redux-form';
+import {connect} from 'react-redux';
 import {
   StyleSheet,
   Text,
@@ -11,13 +12,14 @@ import {
 } from "react-native";
 
 import { Actions } from 'react-native-router-flux';
-import {addEvent} from '../../actions/auth'
+import {addEvent} from '../../actions/addEvents'
 
 
 var Update = React.createClass ({
   addNewEvent: function(){
+    console.log("update props", this.props.user_id)
     var {dispatch, fields: {eventName, eventTime}} = this.props;
-    dispatch(addEvent(eventName.value, eventTime.value))
+    dispatch(addEvent(this.props.user_id, eventName.value, eventTime.value))
     console.log("working", eventName.value)
   },
 
@@ -147,6 +149,8 @@ var validate = (formProps) => {
   }
   return errors;
 }
+
+
 
 module.exports = reduxForm({
   form: 'login',
