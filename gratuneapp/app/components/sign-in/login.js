@@ -11,6 +11,7 @@ import{
   RefreshControl,
   NavigatorIOS
 } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 import {loginUser, signupUser} from '../../actions/auth'
 import SignupPage from './SignupPage'
@@ -43,17 +44,22 @@ var Login = React.createClass({
     }
     return (
       <View style={styles.container}>
+
         <View style={styles.imageContainer}>
+
         <Image style = {styles.image}
           source = {
               require('../../image/gnote.png')
           }/>
       </View>
-      <View style={styles.titleContainer}>
       <Text style={styles.title}>
         Gratune
       </Text>
-      </View>
+
+      <KeyboardAwareScrollView keyboardDismissMode="interactive">
+
+      <View style={styles.signinContainer}>
+
       <View style = {styles.field}>
         <TextInput
         {...email}
@@ -85,6 +91,9 @@ var Login = React.createClass({
       </TouchableOpacity>
       </View>
 
+    </View>
+  </KeyboardAwareScrollView>
+
       </View>
     )
   }
@@ -102,19 +111,24 @@ const styles = StyleSheet.create({
       flex:1,
       justifyContent:'center',
       alignItems:'center',
+
   },
   image:{
     resizeMode: 'contain',
-    width: 200,
+    width: 175,
   },
   titleContainer:{
     padding:10
+  },
+  signinContainer:{
+    flex:4,
   },
   title:{
     justifyContent:'center',
     alignSelf:'center',
     color:'#cdd1c4',
-    fontSize: 35
+    fontSize: 35,
+    paddingBottom:30
   },
   field: {
     borderRadius: 5,
