@@ -25,8 +25,8 @@ var userSchema = new Schema ({
   },
   concerts:[
     {
-      music:{type:String},
-      time:{type:String}
+      music:String,
+      time:String
     }
 
   ]

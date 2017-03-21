@@ -3,18 +3,17 @@ const mongoose = require('mongoose')
 
 exports.add = function (req, res, next) {
 
-  var events = req.body
+  const showing = req.body
   var user_id = req.params.user_id
   // var text = req.body.text
-  console.log("this user",events)
+  console.log("this user",showing)
   console.log("user ID", user_id)
 
-  User.find({_id:user_id},function(err,existingUser){
-    console.log(existingUser);
+    User.find({_id:user_id}).populate("concerts").exec(function(err,shows){
+    console.log("concerts",shows[0].concerts)
+    shows[0].concerts.push(showing)
+    console.log("concerts",shows[0].concerts)
 
-    existingUser[0].concerts.push(events)
-    console.log(existingUser);
-    // console.log();
   })
 
 
