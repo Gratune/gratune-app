@@ -24,6 +24,6 @@ router.route("/concerts")
 .get(requireAuth, ConcertController.index)
 
 router.route("/user/:user_id/concerts")
-.post(ConcertController.add)
+.put(ConcertController.add)
 
 module.exports = router

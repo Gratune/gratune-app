@@ -11,7 +11,7 @@ exports.add = function (req, res, next) {
 
     User.find({_id:user_id}).populate("concerts").exec(function(err,shows){
     console.log("concerts",shows[0].concerts)
-    shows[0].concerts.push(showing)
+    shows[0].concerts.push({tonight:"tonight"})
     console.log("concerts",shows[0].concerts)
 
   })
