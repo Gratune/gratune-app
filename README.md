@@ -17,4 +17,3 @@ updated on everything going on.
 - MongoDB
 - Xcode
 - Heroku
-- Semantic UI
