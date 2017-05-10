@@ -35,8 +35,6 @@ var Account = React.createClass({
             </Text>
 
           </View>
-
-
         </ScrollView>
       </View>
     )

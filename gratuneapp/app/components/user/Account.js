@@ -40,10 +40,7 @@ var Account = React.createClass({
                 <Text style={styles.buttonText}>Sign Out</Text>
               </TouchableOpacity>
             </View>
-
           </View>
-
-
         </ScrollView>
       </View>
     )
